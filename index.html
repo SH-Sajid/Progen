@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Portfolio Generator</h1>
+
+        <div id="auth-section">
+            <!-- Registration Form -->
+            <div id="register-section">
+                <h2>Register</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" name="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password:</label>
+                        <div class="password-container">
+                            <input type="password" id="register-password" name="register-password" required>
+                            <button type="button" id="register-toggle-password">Show</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password:</label>
+                        <div class="password-container">
+                            <input type="password" id="register-confirm-password" name="register-confirm-password"
+                                required>
+                            <button type="button" id="register-toggle-confirm-password">Show</button>
+                        </div>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+                <p id="register-error" class="error-message"></p>
+                <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-section" style="display: none;">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" name="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password:</label>
+                        <div class="password-container">
+                            <input type="password" id="login-password" name="login-password" required>
+                            <button type="button" id="login-toggle-password-login">Show</button>
+                        </div>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <p id="login-error" class="error-message"></p>
+                <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+            </div>
+        </div>
+
+
+
+        <div id="portfolio-form-section" style="display: none;">
+            <h2>Portfolio Information</h2>
+            <form id="portfolio-form">
+
+                <!-- Personal Information -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="form-group">
+                        <label for="full-name">Full Name:</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-info">Contact Information:</label>
+                        <input type="text" id="contact-info" name="contact-info" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="photo">Photo:</label>
+                        <input type="file" id="photo" name="photo" accept=".jpg,.png">
+                    </div>
+                    <div class="form-group">
+                        <label for="short-bio">Short Bio:</label>
+                        <textarea id="short-bio" name="short-bio" rows="4" required></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Skills -->
+                <fieldset>
+                    <legend>Skills</legend>
+                    <div class="form-group">
+                        <label for="soft-skills">Soft Skills (comma-separated):</label>
+                        <input type="text" id="soft-skills" name="soft-skills">
+                    </div>
+                    <div class="form-group">
+                        <label for="technical-skills">Technical Skills (comma-separated):</label>
+                        <input type="text" id="technical-skills" name="technical-skills">
+                    </div>
+                </fieldset>
+
+                <!-- Academic Background -->
+                <fieldset>
+                    <legend>Academic Background (Optional)</legend>
+                    <div class="form-group">
+                        <label for="institute">Institute:</label>
+                        <input type="text" id="institute" name="institute">
+                    </div>
+                    <div class="form-group">
+                        <label for="degree">Degree:</label>
+                        <input type="text" id="degree" name="degree">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year:</label>
+                        <input type="number" id="year" name="year">
+                    </div>
+                    <div class="form-group">
+                        <label for="grade">Grade:</label>
+                        <input type="text" id="grade" name="grade">
+                    </div>
+                </fieldset>
+
+                <!-- Work Experience -->
+                <fieldset>
+                    <legend>Work Experience</legend>
+                    <div class="form-group">
+                        <label for="company-name">Company Name:</label>
+                        <input type="text" id="company-name" name="company-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="job-duration">Job Duration:</label>
+                        <input type="text" id="job-duration" name="job-duration">
+                    </div>
+                    <div class="form-group">
+                        <label for="job-responsibilities">Job Responsibilities:</label>
+                        <textarea id="job-responsibilities" name="job-responsibilities" rows="4"></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Projects/Publications -->
+                <fieldset>
+                    <legend>Projects/Publications (Optional)</legend>
+                    <div class="form-group">
+                        <label for="projects">Projects/Publications:</label>
+                        <textarea id="projects" name="projects" rows="4"></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Generate Portfolio</button>
+            </form>
+            <p id="form-error" class="error-message"></p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
